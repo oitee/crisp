@@ -5,9 +5,8 @@ import * as lispEval from "./eval.mjs";
 import * as utils from "./utils.mjs";
 
 function lisp(expr) {
-  let chars = [...expr];
-  let s = new stack.Stack();
-  let atom;
+  let chars = [...expr], s = new stack.Stack(), atom;
+
   for (let i = 0; i < chars.length; i++) {
     let presentChar = chars[i];
     if (utils.isDigit(presentChar)) {
@@ -25,8 +24,8 @@ function lisp(expr) {
         s.push(atom);
         atom = undefined;
       }
-      let tokens = [];
-      let poppedValue = s.pop();
+      
+      let tokens = [], poppedValue = s.pop();
       while (poppedValue !== "(") {
         tokens.push(poppedValue);
         poppedValue = s.pop();
