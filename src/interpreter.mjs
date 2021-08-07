@@ -1,15 +1,15 @@
 import * as operators from "./operators.mjs";
 import * as reduce from "./reduce.mjs";
-import * as Stack from "./stack.mjs";
+import * as stack from "./stack.mjs";
 import * as lispEval from "./eval.mjs";
 import * as utils from "./utils.mjs";
 
-function lisp(input_str) {
-  let input_arr = [...input_str];
-  let stack = new Stack.Stack();
+function lisp(expr) {
+  let chars = [...expr];
+  let s = new stack.Stack();
   let atom;
-  for (let i = 0; i < input_arr.length; i++) {
-    let presentChar = input_arr[i];
+  for (let i = 0; i < chars.length; i++) {
+    let presentChar = chars[i];
     if (utils.isDigit(presentChar)) {
       if (atom === undefined) {
         atom = 0;
@@ -17,35 +17,35 @@ function lisp(input_str) {
       atom = atom * 10 + parseInt(presentChar);
     } else if (presentChar === " ") {
       if (utils.isInteger(atom)) {
-        stack.push(atom);
+        s.push(atom);
         atom = undefined;
       }
     } else if (presentChar === ")") {
       if (utils.isInteger(atom)) {
-        stack.push(atom);
+        s.push(atom);
         atom = undefined;
       }
       let tokens = [];
-      let poppedValue = stack.pop();
+      let poppedValue = s.pop();
       while (poppedValue !== "(") {
         tokens.push(poppedValue);
-        poppedValue = stack.pop();
+        poppedValue = s.pop();
       }
       let value = lispEval.lispEval(tokens);
-      stack.push(value);
+      s.push(value);
     } else {
-      stack.push(presentChar);
+      s.push(presentChar);
     }
   }
-  //after the for-loop is complete, the stack should contain the value of the entire expression
-  //if there are more than one item, there is an error
-  //if the only item in the stack is not a number, there is an error
-  let result = stack.pop();
-  if (!stack.isEmpty()) {
+  //s should contain the value of the entire expression
+  let result = s.pop();
+  if (!s.isEmpty()) {
+    //if there are more than one item, there is an error
     throw "error: the resultant value is not the last item. Suspect: unopened brackets";
   }
-
+  
   if (utils.isInteger(result)) {
+    //if result is not an integer, there is an error
     return result;
   }
   throw "error: the resultant value is not an integer";
