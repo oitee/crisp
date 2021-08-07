@@ -5,7 +5,7 @@ function ifNumber(a){
     throw "operand is not a number: " + a;
 }
 
-let operators = {
+const operators = {
   "*": function (n, m = 1) {
     return ifNumber(n) * ifNumber(m);
   },
