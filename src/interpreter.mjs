@@ -4,7 +4,7 @@ import * as stack from "./stack.mjs";
 import * as lispEval from "./eval.mjs";
 import * as utils from "./utils.mjs";
 
-function lisp(expr) {
+export function lisp(expr) {
   let chars = [...expr], s = new stack.Stack(), atom;
 
   for (let i = 0; i < chars.length; i++) {
@@ -49,7 +49,3 @@ function lisp(expr) {
   }
   throw "error: the resultant value is not an integer";
 }
-console.log(lisp("(* 10 (+ 11 12) 13)") == 2990);
-console.log(lisp("(* 5 4 3 2 1)") == 120);
-console.log(lisp("(+ 1 (* 2 3) (* 4 2))") == 15);
-//console.log(lisp("(+ & 6)"));
