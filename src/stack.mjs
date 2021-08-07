@@ -19,7 +19,7 @@ export function Stack() {
       }),
       (this.pop = function () {
         if (this.isEmpty()) {
-          return "underflow";
+          throw "underflow";
         }
         let popped = this.head.data;
         this.head = this.head.next;
@@ -27,22 +27,11 @@ export function Stack() {
       }),
       (this.peek = function () {
         if (this.isEmpty()) {
-          return "empty stack";
+          throw "empty stack";
         }
         return this.head.data;
       });
   }
   
-  function testStack() {
-    let s = new Stack();
-    console.log(s.peek());
-    console.log(s.pop());
-    console.log(s.push(1));
-    s.push(2);
-    s.push(3);
-    console.log(s.isEmpty());
-    console.log(s.peek());
-    console.log(s.pop());
-    console.log(s.peek());
-  }
-  //testStack();
+  
+  
