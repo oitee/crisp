@@ -1,15 +1,22 @@
+function ifNumber(a){
+    if(typeof a == "number"){
+        return a;
+    }
+    throw "operand is not a number: " + a;
+}
+
 let operators = {
   "*": function (n, m = 1) {
-    return n * m;
+    return ifNumber(n) * ifNumber(m);
   },
   "+": function (n, m = 0) {
-    return n + m;
+    return ifNumber(n) + ifNumber(m);
   },
   "/": function (n, m = 1) {
-    return n / m;
+    return ifNumber(n) / ifNumber(m);
   },
   "-": function (n, m = 0) {
-    return n - m;
+    return ifNumber(n) - ifNumber(m);
   },
 };
 

@@ -53,3 +53,4 @@ function lisp(input_str) {
 console.log(lisp("(* 10 (+ 11 12) 13)") == 2990);
 console.log(lisp("(* 5 4 3 2 1)") == 120);
 console.log(lisp("(+ 1 (* 2 3) (* 4 2))") == 15);
+//console.log(lisp("(+ & 6)"));
