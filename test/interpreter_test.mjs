@@ -24,7 +24,7 @@ describe("Valid lisp expressions", () => {
     assert.equal(interpreter.lisp("(* 10 (+ 11 12) 13)"), 2990);
     assert.equal(interpreter.lisp("(+ 1 (* 2 3) (* 4 2))"), 15);
   });
-
+ 
   it("Invalid expressions", () => {
     assert.ok(checkInvalidExpression ("(* 9"));
     assert.ok(checkInvalidExpression ("(* (+ 9"));

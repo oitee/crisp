@@ -10,17 +10,32 @@ export function lisp(expr) {
   for (let i = 0; i < chars.length; i++) {
     let presentChar = chars[i];
     if (utils.isDigit(presentChar)) {
+      if(utils.isString(atom)){
+        throw "atoms in an expression cannot contain both digits and numbers: " + atom + presentChar;
+      }
       if (atom === undefined) {
         atom = 0;
       }
       atom = atom * 10 + parseInt(presentChar);
-    } else if (presentChar === " ") {
-      if (utils.isInteger(atom)) {
+    } else if(utils.isAlphabet(presentChar)){
+      if(utils.isInteger(atom)){
+        throw "atoms in an expression cannot contain both digits and numbers:" + atom + presentChar;
+      }
+      if(atom == undefined){
+        atom = presentChar;
+      }
+      else{
+        atom = atom + presentChar;
+      }
+    } 
+    
+    else if (presentChar === " ") {
+      if (utils.isInteger(atom) || utils.isString(atom)) {
         s.push(atom);
         atom = undefined;
       }
     } else if (presentChar === ")") {
-      if (utils.isInteger(atom)) {
+      if (utils.isInteger(atom) || utils.isString(atom)) {
         s.push(atom);
         atom = undefined;
       }
@@ -31,7 +46,11 @@ export function lisp(expr) {
         poppedValue = s.pop();
       }
       let value = lispEval.lispEval(tokens);
-      s.push(value);
+      //the return value of lispEval would be 'null' when the operation involes 'defn'
+      //in that case, no value should be pushed to the stack s
+      if(value != null){
+        s.push(value);
+      }
     } else {
       s.push(presentChar);
     }
@@ -49,3 +68,4 @@ export function lisp(expr) {
   }
   throw "error: the resultant value is not an integer";
 }
+

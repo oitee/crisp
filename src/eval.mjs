@@ -8,7 +8,7 @@ export function lispEval(tokens){
     let operationFn = operators.findOperator(tokens[tokens.length - 1]);
     let operands = [];
     for(let i = tokens.length - 2; i >= 0; i--){
-        if (typeof tokens[i] === "number") {
+        if (typeof tokens[i] === "number" || typeof tokens[i] == "string") {
             operands.push(tokens[i]);
         }
         else{

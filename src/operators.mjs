@@ -1,6 +1,11 @@
+import * as utils from "./utils.mjs";
+let variableTable = {};
 function ifNumber(a){
     if(typeof a == "number"){
         return a;
+    }
+    if(variableTable.hasOwnProperty(a)){
+      return variableTable[a];
     }
     throw "operand is not a number: " + a;
 }
@@ -18,6 +23,15 @@ const operators = {
   "-": function (n, m = 0) {
     return ifNumber(n) - ifNumber(m);
   },
+  "defn": function(variable, value){
+    if(utils.isString(variable)){
+      variableTable[variable] = ifNumber(value);
+    }
+    else{
+      throw "variable name is not a string: " + variable;
+    }
+    return null;
+  }
 };
 
 export function findOperator(str) {
@@ -27,15 +41,3 @@ export function findOperator(str) {
   throw "invalid operator: " + str;
 }
 
-function testing() {
-  console.log(operators.hasOwnProperty(" "));
-  let str = "(* 9 (+ 8 7) 9)";
-  let arr = [...str];
-  let i = 0;
-  while (i < arr.length) {
-    console.log("is " + arr[i] + "  a property of operators?");
-    console.log(operators.hasOwnProperty(arr[i]));
-    i++;
-  }
-}
-//testing();

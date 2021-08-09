@@ -9,7 +9,6 @@ export function reduce(f, data = []){
 function test(){
 let f  = operators.operators['*'];
     let arr = [4, 10, 5, 2];
-    let acc = 3;
-console.log(reduce(f, acc, arr));
+console.log(reduce(f, arr));
 }
 //test();
