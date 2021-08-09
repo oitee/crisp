@@ -1,8 +1,8 @@
-import * as operators from "./operators.mjs";
-import * as reduce from "./reduce.mjs";
-import * as stack from "./stack.mjs";
-import * as lispEval from "./eval.mjs";
-import * as utils from "./utils.mjs";
+import * as operators from "./operators.js";
+import * as reduce from "./reduce.js";
+import * as stack from "./stack.js";
+import * as lispEval from "./eval.js";
+import * as utils from "./utils.js";
 
 export function lisp(expr) {
   let chars = [...expr], s = new stack.Stack(), atom;

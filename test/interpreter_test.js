@@ -1,4 +1,4 @@
-import * as interpreter from "../src/interpreter.mjs";
+import * as interpreter from "../src/interpreter.js";
 import * as assert from "assert";
 
 function checkInvalidExpression(expr){

@@ -1,5 +1,5 @@
-import * as operators from "./operators.mjs";
-import * as reduce from "./reduce.mjs";
+import * as operators from "./operators.js";
+import * as reduce from "./reduce.js";
 export function lispEval(tokens){
     if(tokens.length == 0){
         throw "empty expression is invalid";

@@ -1,4 +1,4 @@
-import * as stack from "../src/stack.mjs";
+import * as stack from "../src/stack.js";
 import * as assert from "assert";
 
 function checkInvalidStack(f) {
