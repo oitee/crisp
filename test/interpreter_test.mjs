@@ -24,7 +24,13 @@ describe("Valid lisp expressions", () => {
     assert.equal(interpreter.lisp("(* 10 (+ 11 12) 13)"), 2990);
     assert.equal(interpreter.lisp("(+ 1 (* 2 3) (* 4 2))"), 15);
   });
- 
+
+  it("Valid Expressions with variables", () => {
+    assert.equal(interpreter.lisp("(defn n 11) (defn m 100) (* n m)"), 1100);
+    assert.equal(interpreter.lisp("(defn height 10) (defn width (+ height 4)) (defn height 11) (* height width)"), 154);
+    assert.equal(interpreter.lisp("(+ 1 (defn nine 9) (* 4 2) nine)"), 18);
+  });
+
   it("Invalid expressions", () => {
     assert.ok(checkInvalidExpression ("(* 9"));
     assert.ok(checkInvalidExpression ("(* (+ 9"));
