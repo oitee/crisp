@@ -1,5 +1,3 @@
-import * as operators from "./operators.js";
-import * as reduce from "./reduce.js";
 import * as stack from "./stack.js";
 import * as lispEval from "./eval.js";
 import * as utils from "./utils.js";

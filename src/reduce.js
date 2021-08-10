@@ -7,8 +7,9 @@ export function reduce(f, data = []){
     return acc;
 }
 function test(){
-let f  = operators.operators['*'];
+let f  = operators.findOperator('*');
     let arr = [4, 10, 5, 2];
 console.log(reduce(f, arr));
 }
 //test();
+
