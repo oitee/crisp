@@ -23,7 +23,7 @@ const operators = {
   "-": function (n, m = 0) {
     return ifNumber(n) - ifNumber(m);
   },
-  "defn": function(variable, value){
+  "def": function(variable, value){
     if(utils.isString(variable)){
       variableTable[variable] = ifNumber(value);
     }

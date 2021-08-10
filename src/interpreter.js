@@ -44,7 +44,7 @@ export function lisp(expr) {
         poppedValue = s.pop();
       }
       let value = lispEval.lispEval(tokens);
-      //the return value of lispEval would be 'null' when the operation involes 'defn'
+      //the return value of lispEval would be 'null' when the operation involes 'def'
       //in that case, no value should be pushed to the stack s
       if(value != null){
         s.push(value);
