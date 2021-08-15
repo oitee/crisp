@@ -7,7 +7,7 @@ function ifNumber(a){
     if(variableTable.hasOwnProperty(a)){
       return variableTable[a];
     }
-    throw "operand is not a number: " + a;
+    throw "Operand is not a number: " + a;
 }
 
 export const operators = {
@@ -27,10 +27,10 @@ export const operators = {
     if(utils.isString(variable)){
       variableTable[variable] = ifNumber(value);
     }
-    else{
-      throw "variable name is not a string: " + variable;
+    else {
+      throw "Variable name is not a string: " + variable;
     }
-    return null;
+    return ifNumber(value);
   }
 };
 
@@ -38,6 +38,6 @@ export function findOperator(str) {
   if (operators.hasOwnProperty(str)) {
     return operators[str];
   }
-  throw "invalid operator: " + str;
+  throw "Invalid operator: " + str;
 }
 

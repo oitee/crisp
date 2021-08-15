@@ -1,7 +1,7 @@
 
 export function tokenize(str){
     if(typeof str !== "string"){
-        throw "Present token is not a string";
+        throw "Present token is not a string " + str;
     }
 
     let charcodeMinus = "-".charCodeAt(0);
@@ -24,7 +24,7 @@ export function tokenize(str){
                 num = num * 10 + digit;
             }
             else{
-                throw "Atoms in an expression cannot contain both digits and numbers: " + str + str[i];
+                throw "Incompatible types: " + str;
             }
         }
         if(isNegative){

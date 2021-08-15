@@ -42,14 +42,15 @@ export function lisp(expr) {
 
   //s should contain the value of the entire expression
   let result = s.pop();
-  if (!s.isEmpty()) {
-    //if there are more than one item, there is an error
-    throw "error: the resultant value is not the last item. Suspect: unopened brackets";
+  while (!s.isEmpty()) {
+    if(s.pop() == "("){
+      throw "Incomplete expression";
+    }
   }
 
   if (utils.isInteger(result)) {
     //if result is not an integer, there is an error
     return result;
   }
-  throw "error: the resultant value is not an integer";
+  throw "Unexpected result";
 }
