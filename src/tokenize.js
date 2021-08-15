@@ -34,12 +34,3 @@ export function tokenize(str){
     }
     return str;
 }
-//test
-function test (){
-console.log(tokenize("99") === 99);
-console.log(tokenize("def") === "def");
-console.log(tokenize("-99") === -99);
-console.log(tokenize("(") === "(");
-console.log(tokenize([11]));
-}
-//test();

@@ -10,7 +10,7 @@ export function lisp(expr) {
 
   for (let i = 0; i < chars.length; i++) {
     let presentChar = chars[i];
-    if (presentChar != " " && presentChar != ")") {
+    if (presentChar != " " && presentChar != ")" && presentChar != "\n") {
       if(presentChar === "("){
         s.push(presentChar);
         atom = "";
