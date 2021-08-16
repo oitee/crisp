@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1629118058837" clover="3.2.0">
+  <project timestamp="1629118058838" name="All files">
+    <metrics statements="118" coveredstatements="104" conditionals="71" coveredconditionals="46" methods="21" coveredmethods="18" elements="210" coveredelements="168" complexity="0" loc="118" ncloc="118" packages="1" files="7" classes="7"/>
+    <file name="eval.js" path="/home/ot/projects/crisp/src/eval.js">
+      <metrics statements="9" coveredstatements="8" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
+      <line num="4" count="41" type="cond" truecount="2" falsecount="0"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="8" count="40" type="stmt"/>
+      <line num="9" count="38" type="stmt"/>
+      <line num="10" count="38" type="stmt"/>
+      <line num="11" count="92" type="cond" truecount="3" falsecount="1"/>
+      <line num="12" count="92" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="18" count="38" type="stmt"/>
+    </file>
+    <file name="interpreter.js" path="/home/ot/projects/crisp/src/interpreter.js">
+      <metrics statements="29" coveredstatements="28" conditionals="17" coveredconditionals="15" methods="1" coveredmethods="1"/>
+      <line num="7" count="24" type="stmt"/>
+      <line num="8" count="24" type="stmt"/>
+      <line num="9" count="24" type="stmt"/>
+      <line num="11" count="24" type="stmt"/>
+      <line num="12" count="440" type="stmt"/>
+      <line num="13" count="440" type="cond" truecount="5" falsecount="0"/>
+      <line num="14" count="285" type="cond" truecount="2" falsecount="0"/>
+      <line num="15" count="51" type="stmt"/>
+      <line num="16" count="51" type="stmt"/>
+      <line num="19" count="234" type="stmt"/>
+      <line num="22" count="155" type="cond" truecount="2" falsecount="0"/>
+      <line num="23" count="128" type="stmt"/>
+      <line num="24" count="128" type="stmt"/>
+      <line num="25" count="128" type="stmt"/>
+      <line num="27" count="155" type="cond" truecount="2" falsecount="0"/>
+      <line num="28" count="42" type="stmt"/>
+      <line num="29" count="42" type="stmt"/>
+      <line num="30" count="139" type="stmt"/>
+      <line num="31" count="139" type="stmt"/>
+      <line num="33" count="41" type="stmt"/>
+      <line num="36" count="37" type="cond" truecount="1" falsecount="1"/>
+      <line num="37" count="37" type="stmt"/>
+      <line num="44" count="19" type="stmt"/>
+      <line num="45" count="19" type="stmt"/>
+      <line num="46" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="47" count="4" type="stmt"/>
+      <line num="51" count="15" type="cond" truecount="1" falsecount="1"/>
+      <line num="53" count="15" type="stmt"/>
+      <line num="55" count="0" type="stmt"/>
+    </file>
+    <file name="operators.js" path="/home/ot/projects/crisp/src/operators.js">
+      <metrics statements="18" coveredstatements="16" conditionals="12" coveredconditionals="7" methods="7" coveredmethods="6"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="4" count="119" type="cond" truecount="2" falsecount="0"/>
+      <line num="5" count="105" type="stmt"/>
+      <line num="7" count="14" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="13" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="15" count="30" type="stmt"/>
+      <line num="18" count="13" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="24" count="3" type="stmt"/>
+      <line num="27" count="14" type="cond" truecount="1" falsecount="1"/>
+      <line num="28" count="14" type="stmt"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="33" count="14" type="stmt"/>
+      <line num="38" count="42" type="cond" truecount="2" falsecount="0"/>
+      <line num="39" count="40" type="stmt"/>
+      <line num="41" count="2" type="stmt"/>
+    </file>
+    <file name="reduce.js" path="/home/ot/projects/crisp/src/reduce.js">
+      <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="3" count="40" type="stmt"/>
+      <line num="4" count="40" type="stmt"/>
+      <line num="5" count="60" type="stmt"/>
+      <line num="7" count="39" type="stmt"/>
+    </file>
+    <file name="stack.js" path="/home/ot/projects/crisp/src/stack.js">
+      <metrics statements="19" coveredstatements="19" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+      <line num="3" count="219" type="stmt"/>
+      <line num="4" count="219" type="stmt"/>
+      <line num="9" count="25" type="stmt"/>
+      <line num="12" count="462" type="stmt"/>
+      <line num="15" count="219" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="41" type="stmt"/>
+      <line num="17" count="41" type="stmt"/>
+      <line num="19" count="178" type="stmt"/>
+      <line num="20" count="178" type="stmt"/>
+      <line num="21" count="178" type="stmt"/>
+      <line num="22" count="178" type="stmt"/>
+      <line num="25" count="213" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="28" count="211" type="stmt"/>
+      <line num="29" count="211" type="stmt"/>
+      <line num="30" count="211" type="stmt"/>
+      <line num="33" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="34" count="1" type="stmt"/>
+      <line num="36" count="2" type="stmt"/>
+    </file>
+    <file name="tokenize.js" path="/home/ot/projects/crisp/src/tokenize.js">
+      <metrics statements="23" coveredstatements="21" conditionals="15" coveredconditionals="13" methods="1" coveredmethods="1"/>
+      <line num="3" count="132" type="cond" truecount="1" falsecount="1"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="7" count="132" type="stmt"/>
+      <line num="8" count="132" type="stmt"/>
+      <line num="9" count="132" type="stmt"/>
+      <line num="10" count="132" type="stmt"/>
+      <line num="11" count="132" type="stmt"/>
+      <line num="13" count="132" type="cond" truecount="5" falsecount="0"/>
+      <line num="14" count="62" type="stmt"/>
+      <line num="15" count="62" type="stmt"/>
+      <line num="16" count="62" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="4" type="stmt"/>
+      <line num="18" count="4" type="stmt"/>
+      <line num="20" count="62" type="stmt"/>
+      <line num="21" count="74" type="stmt"/>
+      <line num="22" count="74" type="cond" truecount="3" falsecount="1"/>
+      <line num="23" count="74" type="stmt"/>
+      <line num="24" count="74" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="30" count="62" type="cond" truecount="2" falsecount="0"/>
+      <line num="31" count="4" type="stmt"/>
+      <line num="33" count="58" type="stmt"/>
+      <line num="35" count="70" type="stmt"/>
+    </file>
+    <file name="utils.js" path="/home/ot/projects/crisp/src/utils.js">
+      <metrics statements="16" coveredstatements="8" conditionals="14" coveredconditionals="0" methods="4" coveredmethods="2"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="5" count="0" type="cond" truecount="0" falsecount="4"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="8" count="0" type="stmt"/>
+      <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="13" count="15" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="22" count="0" type="cond" truecount="0" falsecount="4"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="26" count="0" type="stmt"/>
+      <line num="33" count="14" type="stmt"/>
+    </file>
+  </project>
+</coverage>
