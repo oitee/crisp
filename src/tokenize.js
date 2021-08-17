@@ -1,7 +1,11 @@
 
+import * as operators from "./operators.js";
 export function tokenize(str){
     if(typeof str !== "string"){
         throw "Present token is not a string " + str;
+    }
+    if(operators.isOperator(str)){
+        return str;
     }
 
     let charcodeMinus = "-".charCodeAt(0);
@@ -34,3 +38,4 @@ export function tokenize(str){
     }
     return str;
 }
+

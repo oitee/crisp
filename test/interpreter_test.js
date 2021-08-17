@@ -18,6 +18,7 @@ describe("Valid lisp expressions", () => {
     assert.equal(interpreter.lisp("(+ 8 9)"), 17);
     assert.equal(interpreter.lisp("(* 5 4 3 2 1)"), 120);
     assert.equal(interpreter.lisp("(* 5 \n 4 \n 3 2 1)"), 120);
+    assert.equal(interpreter.lisp("(/ 2 3)"), 2/3);
   });
 
   it("Nested expressions", () => {
@@ -25,6 +26,9 @@ describe("Valid lisp expressions", () => {
     assert.equal(interpreter.lisp("(* 10 (+ 11 12) 13)"), 2990);
     assert.equal(interpreter.lisp("(+ 1 (* 2 3) (* 4 2))"), 15);
     assert.equal(interpreter.lisp("(+ -1 (* -2 3) (* 4 2))"), 1);
+    assert.equal(interpreter.lisp("(- (+ 1 2 3) (+ 1 2 3))"), 0);
+    assert.equal(interpreter.lisp("(* (+ 1 2 3) (+ 1 2 3))"), 36);
+    assert.equal(interpreter.lisp("(/ (+ 1 2 3) (+ 1 2 3))"), 1);
   });
 
   it("Valid Expressions with variables", () => {

@@ -41,3 +41,7 @@ export function findOperator(str) {
   throw "Invalid operator: " + str;
 }
 
+export function isOperator(str){
+  return operators.hasOwnProperty(str);
+}
+
