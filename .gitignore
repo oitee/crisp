@@ -1,3 +1,4 @@
 node_modules
 src/consolidated.js
 coverage
+dist
