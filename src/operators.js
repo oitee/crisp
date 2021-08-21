@@ -1,13 +1,13 @@
 import * as utils from "./utils.js";
 let variableTable = {};
-function ifNumber(a){
-    if(typeof a == "number"){
-        return a;
-    }
-    if(variableTable.hasOwnProperty(a)){
-      return variableTable[a];
-    }
-    throw "Operand is not a number: " + a;
+function ifNumber(a) {
+  if (typeof a == "number") {
+    return a;
+  }
+  if (variableTable.hasOwnProperty(a)) {
+    return variableTable[a];
+  }
+  throw "Operand is not a number: " + a;
 }
 
 export const operators = {
@@ -23,15 +23,14 @@ export const operators = {
   "-": function (n, m = 0) {
     return ifNumber(n) - ifNumber(m);
   },
-  "def": function(variable, value){
-    if(utils.isString(variable)){
+  def: function (variable, value) {
+    if (utils.isString(variable)) {
       variableTable[variable] = ifNumber(value);
-    }
-    else {
+    } else {
       throw "Variable name is not a string: " + variable;
     }
     return ifNumber(value);
-  }
+  },
 };
 
 export function findOperator(str) {
@@ -41,7 +40,6 @@ export function findOperator(str) {
   throw "Invalid operator: " + str;
 }
 
-export function isOperator(str){
+export function isOperator(str) {
   return operators.hasOwnProperty(str);
 }
-

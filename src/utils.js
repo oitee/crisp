@@ -6,7 +6,7 @@ export function isDigit(char) {
     return false;
   }
   let charCode = char.charCodeAt(0); // for identifying if presentChar is an integer
-  return (charCode >= charCodeZero && charCode <= charCodeNine);
+  return charCode >= charCodeZero && charCode <= charCodeNine;
 }
 
 export function isInteger(n) {
@@ -29,6 +29,6 @@ export function isAlphabet(char) {
   );
 }
 
-export function isString(str){
+export function isString(str) {
   return typeof str === "string";
 }

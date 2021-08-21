@@ -1,21 +1,22 @@
 import * as operators from "./operators.js";
 import * as reduce from "./reduce.js";
-export function lispEval(tokens){
-    if(tokens.length == 0){
-        throw "Empty expression is invalid";
+import * as tokenize from "./tokenize.js";
+export function lispEval(atoms) {
+  if (atoms.length == 0) {
+    throw "Empty expression is invalid";
+  }
+  for (let i = 0; i < atoms.length; i++) {
+    atoms[i] = tokenize.tokenize(atoms[i]);
+  }
+  //the atoms are in LIFO- so operator will be the last item in atoms
+  let operationFn = operators.findOperator(atoms[atoms.length - 1]);
+  let operands = [];
+  for (let i = atoms.length - 2; i >= 0; i--) {
+    if (typeof atoms[i] === "number" || typeof atoms[i] == "string") {
+      operands.push(atoms[i]);
+    } else {
+      throw "Operand is not valid: " + atoms[i];
     }
-    //the tokens are in LIFO- so operator will be the last item in tokens
-    let operationFn = operators.findOperator(tokens[tokens.length - 1]);
-    let operands = [];
-    for(let i = tokens.length - 2; i >= 0; i--){
-        if (typeof tokens[i] === "number" || typeof tokens[i] == "string") {
-            operands.push(tokens[i]);
-        }
-        else{
-            throw "Operand is not valid: " + tokens[i];
-        }
-    }
-    return reduce.reduce(operationFn, operands);
+  }
+  return reduce.reduce(operationFn, operands);
 }
-
-

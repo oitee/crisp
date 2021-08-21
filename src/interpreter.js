@@ -1,9 +1,11 @@
 import * as stack from "./stack.js";
 import * as lispEval from "./eval.js";
 import * as utils from "./utils.js";
-import * as tokenize from "./tokenize.js";
 
 export function lisp(expr) {
+  if (typeof expr !== "string") {
+    throw "Input is not a string " + str;
+  }
   let chars = [...expr],
     s = new stack.Stack();
   let atom = "";
@@ -11,21 +13,20 @@ export function lisp(expr) {
   for (let i = 0; i < chars.length; i++) {
     let presentChar = chars[i];
     if (presentChar != " " && presentChar != ")" && presentChar != "\n") {
-      if(presentChar === "("){
+      if (presentChar === "(") {
         s.push(presentChar);
         atom = "";
-      }
-      else{
+      } else {
         atom = atom + presentChar;
       }
     } else {
       if (atom !== "") {
-        atom = tokenize.tokenize(atom);
         s.push(atom);
         atom = "";
       }
       if (presentChar === ")") {
-        let tokens = [], poppedValue = s.pop();
+        let tokens = [],
+          poppedValue = s.pop();
         while (poppedValue !== "(") {
           tokens.push(poppedValue);
           poppedValue = s.pop();
@@ -43,7 +44,7 @@ export function lisp(expr) {
   //s should contain the value of the entire expression
   let result = s.pop();
   while (!s.isEmpty()) {
-    if(s.pop() == "("){
+    if (s.pop() == "(") {
       throw "Incomplete expression";
     }
   }
