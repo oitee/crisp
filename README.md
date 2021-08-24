@@ -60,20 +60,20 @@ In this way, a **syntax tree** will be created incrementally and from bottom-up.
 First, the `*` operator will be pushed to the stack, along with the opening parenthesis `(`. Then, the following atoms will be pushed: `1` `(` `*` `5` and `6`. (For the sake of simplicity, the parentheses are not shown on the syntax tree).
 
 
-![Syntax Tree and stack 1](/assets/images/syntax_tree_stack_1.png)
+![Syntax Tree and stack 1](https://otee.dev/assets/images/syntax_tree_stack_1.png)
 
 
 Now that there is a `)`, it will signify the end of the current list. So, all the atoms of the present list will be popped, namely  `6` `5` `*` and `(`. In place of these atoms, the value of `(* 5 6)` will be pushed into the stack. The syntax tree would now look like this:
 
-![Syntax Tree and stack 2](/assets/images/syntax_tree_stack_2.png)
+![Syntax Tree and stack 2](https://otee.dev/assets/images/syntax_tree_stack_2.png)
 
 In a similar manner, the next set of atoms will be pushed, i.e., `(` `+` `7` `8` `9` will be pushed:
 
-![Syntax Tree and stack 3](/assets/images/syntax_tree_stack_3.png)
+![Syntax Tree and stack 3](https://otee.dev/assets/images/syntax_tree_stack_3.png)
 
-Again, the presence of `)` would signify the end of the current list. So, all the atoms of this list will be popped and their result will be pushed into the stack. Finally, the penultimate atom, `10` will be pushed and then all the remaining values in the stack will be passed to the addition operation along with `1`.
+Again, the presence of `)` would signify the end of the current list. So, all the atoms of this list will be popped and their result will be pushed into the stack. Finally, the penultimate atom, `10` will be pushed and then all the remaining values in the stack will be passed to the multiplication operator along with `1`.
 
-![Syntax Tree and stack 4](/assets/images/syntax_tree_stack_4.png)
+![Syntax Tree and stack 4](https://otee.dev/assets/images/syntax_tree_stack_4.png)
 
 Now that there is no other element left in the expression, the return value of this function call will be the final output, i.e., `7200`.
 
